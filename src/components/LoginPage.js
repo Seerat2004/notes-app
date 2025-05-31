@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './LoginPage.css';
-
+import LoginImg from '../components/image.png';
 function LoginPage({ setLoading }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -34,6 +34,9 @@ function LoginPage({ setLoading }) {
   return (
     <div className="login-container">
       <div className="login-card">
+      <div className="image-container">
+          <img src={LoginImg} alt="Login illustration" />
+        </div>
         <h1>{isLogin ? 'Login' : 'Register'}</h1>
         <form onSubmit={handleSubmit}>
           <div className={`input-group ${isFocused || username ? 'focused' : ''}`}>
